@@ -3,4 +3,38 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: black;
+}
+
+.header {
+  border:5px solid brown;
+  border-radius: 10px;
+  background-color: bisque;
+  color: brown;
+}
+
+.NavBar {
+  border:5px solid brown;
+  border-radius: 10px;
+  background-color: bisque;
+  color: brown;
+}
+
+.ArticleList{
+  border:5px solid brown;
+  border-radius: 10px;
+  position: relative;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color:bisque;
+}
+
+.Button{
+  border:5px solid brown;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: bisque;
+  color: brown;
+  
 }
