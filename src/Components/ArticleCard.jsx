@@ -1,6 +1,10 @@
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
 function ArticleCard({article}) {
-    // console.log(article, 'from the article card')
+    
     return(
+        <Link to={`/articles/${article.article_id}`}>
             <button className="Button">
             <img src={article.article_img_url}/>
             <p>{article.title}</p>
@@ -11,6 +15,7 @@ function ArticleCard({article}) {
             <p>Votes: {article.votes}</p>
             <p>Article ID: {article.article_id}</p>
             </button>
+        </Link>
     ) 
 }
   
