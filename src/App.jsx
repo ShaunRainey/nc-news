@@ -22,7 +22,6 @@ function App() {
             <ArticleList/>
           </h2>
         } />
-
         <Route path="/articles/:article_id" element = {<ArticleList/>} />
 
 
