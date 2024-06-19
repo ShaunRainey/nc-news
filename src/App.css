@@ -18,6 +18,7 @@
   border-radius: 10px;
   background-color: bisque;
   color: brown;
+  
 }
 
 .ArticleList{
@@ -36,5 +37,53 @@
   padding: 2rem;
   background-color: bisque;
   color: brown;
-  
+}
+
+.Article{
+  border:5px solid brown;
+  border-radius: 10px;
+  position: relative;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color:bisque;
+  color: brown;
+  font-weight: 640;
+}
+
+.CommentList{
+  border:5px solid brown;
+  border-radius: 10px;
+  position: relative;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color:bisque;
+}
+
+.Comment{
+  position: relative;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color:bisque;
+  color: brown;
+  font-weight: 640;
+}
+
+.VoteButton{
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: brown;
+  color: bisque;
+  font-size: 20px;
+
+}
+
+.WaitingForInfo{
+  border:5px solid brown;
+  border-radius: 10px;
+  position: relative;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color:bisque;
+  color:brown
 }

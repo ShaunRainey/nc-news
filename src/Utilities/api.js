@@ -10,10 +10,23 @@ export const getArticles = () => {
 } 
 
 export const getArticlesById = (article_id) => {
-    console.log(article_id, 'from api')
     return ncNews.get(`articles/${article_id}`)
     .then((response) => {
-        // console.log(response.data.article)
         return response.data.article
     })
 } 
+
+export const getComments = (article_id) => {
+    return ncNews.get(`articles/${article_id}/comments`)
+    .then((response)=>{
+        return response.data.comments
+    })
+}
+
+export const patchArticle = (article_id) => {
+    const patchBody = {inc_votes: 1}
+    return ncNews.patch(`/articles/${article_id}`, patchBody)
+    .then(({data})=>{
+        data.article
+    })
+}
