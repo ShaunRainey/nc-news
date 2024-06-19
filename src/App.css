@@ -77,3 +77,13 @@
   font-size: 20px;
 
 }
+
+.WaitingForInfo{
+  border:5px solid brown;
+  border-radius: 10px;
+  position: relative;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color:bisque;
+  color:brown
+}

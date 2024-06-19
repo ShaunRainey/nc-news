@@ -6,18 +6,18 @@ import { useParams } from "react-router-dom";
 const CommentList = () =>{
 
     const [comments, setComments] = useState([])
-  
+    const [isLoading, setIsLoading] = useState(false)
     const {article_id} = useParams();
 
     useEffect(() =>{
 
-            // setIsLoading(true);
+            setIsLoading(true);
             getComments(article_id).then((commentsFromApi)=>{
             setComments(commentsFromApi)
-            // setIsLoading(false)
+            setIsLoading(false)
         })}
     ,[])
-    
+
     return (
         <main>
             {comments.map((comment)=>{

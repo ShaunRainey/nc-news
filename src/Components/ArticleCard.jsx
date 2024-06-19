@@ -44,7 +44,7 @@ function ArticleCard({article, setArticles}) {
                 <Link to={`/articles/${article.article_id}/comments`}>
                 <p>Click to see {article.comment_count} comments!</p>
                 </Link>
-                <button className="VoteButton" onClick={()=>{upvoteArticle(article.article_id)}}>Votes: {article.votes} </button>
+                <button className="VoteButton" onClick={()=>{upvoteArticle(article.article_id)}} >Votes: {article.votes} </button>
                 <p>Article ID: {article.article_id}</p>
             </article>
         
