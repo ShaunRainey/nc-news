@@ -26,7 +26,7 @@ const CommentList = () =>{
             {comments.map((comment)=>{
                 return( 
                     <ul className="CommentList" key={comment.comment_id}>
-                        <CommentCard comment = {comment} />
+                        <CommentCard comment = {comment} setComments={setComments}/>
                     </ul>)
             })}
         </main> 

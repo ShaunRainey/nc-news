@@ -13,11 +13,11 @@ const CommentAdder = ({setComments}) => {
 
         setButtonDisabled(true)
 
-        postComment(article_id,newComment, "grumpy19")
+        postComment(article_id, newComment, "grumpy19")
         .then((newCommentFromAPI)=>{
             
             setNewComment("")
-
+            
             setComments((currComments)=> {
                 setButtonDisabled(false)
                 return[newCommentFromAPI, ...currComments]

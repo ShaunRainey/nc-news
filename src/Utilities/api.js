@@ -41,3 +41,7 @@ export const postComment = (article_id, newCommentText, user) => {
         return data.comment
     })
 }
+
+export const deleteComment = (comment_id) => {
+    return ncNews.delete(`/comments/${comment_id}`)
+}
