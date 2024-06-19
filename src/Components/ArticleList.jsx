@@ -8,7 +8,6 @@ const ArticleList = () =>{
     const [isLoading, setIsLoading] = useState(true)
 
     const {article_id} = useParams();
-    // console.log(article_id, 'from article list')
 
     useEffect(() =>{
         if(article_id){

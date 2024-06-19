@@ -1,6 +1,5 @@
 const Comments = ({comment}) =>{
 
-    // console.log(comment, 'from comment card')
     return (
         <header className="Comment">
             <p>Comment ID: {comment.comment_id}</p>

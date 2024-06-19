@@ -8,7 +8,6 @@ const CommentList = () =>{
     const [comments, setComments] = useState([])
   
     const {article_id} = useParams();
-    // console.log(article_id, 'from article list')
 
     useEffect(() =>{
 

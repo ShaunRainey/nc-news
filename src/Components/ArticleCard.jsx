@@ -5,7 +5,6 @@ import { patchArticle } from "../Utilities/api";
 function ArticleCard({article, setArticles}) {
 
     const upvoteArticle = (article_id) => {
-        console.log(article_id)
         patchArticle(article_id)
 
         setArticles((currArticles)=>{
