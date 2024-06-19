@@ -3,9 +3,7 @@ import NavBar from './Components/NavBar.jsx'
 import HomePage from './Components/HomePage.jsx';
 import ArticleList from './Components/ArticleList.jsx'
 import CommentList from './Components/CommentList.jsx';
-import Comments from './Components/CommentCard.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
 import './App.css'
 
 function App() {
