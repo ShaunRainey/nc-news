@@ -1,7 +1,22 @@
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { patchArticle } from "../Utilities/api";
 
-function ArticleCard({article}) {
+function ArticleCard({article, setArticles}) {
+
+    const upvoteArticle = (article_id) => {
+        console.log(article_id)
+        patchArticle(article_id)
+
+        setArticles((currArticles)=>{
+            return currArticles.map(article =>{
+                if(article.article_id === article_id){
+                    return {...article, votes: article.votes +1}
+                }
+                return article
+            })
+        })
+    }
 
     const {article_id} = useParams();
     if(!article_id){
@@ -30,7 +45,7 @@ function ArticleCard({article}) {
                 <Link to={`/articles/${article.article_id}/comments`}>
                 <p>Click to see {article.comment_count} comments!</p>
                 </Link>
-                <p>Votes: {article.votes}</p>
+                <button className="VoteButton" onClick={()=>{upvoteArticle(article.article_id)}}>Votes: {article.votes} </button>
                 <p>Article ID: {article.article_id}</p>
             </article>
         

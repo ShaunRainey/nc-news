@@ -1,13 +1,12 @@
 const Comments = ({comment}) =>{
 
-    console.log(comment, 'from comment card')
+    // console.log(comment, 'from comment card')
     return (
         <header className="Comment">
             <p>Comment ID: {comment.comment_id}</p>
-            <p>Username: {comment.author}</p>
+            <p>Comment by: {comment.author} {comment.created_at}</p>
             <p>{comment.body}</p>
-            <p>Votes: {comment.votes}</p>
-            <p>Date Posted: {comment.created_at}</p>
+            <button className="VoteButton">Votes: {comment.votes}</button>
         </header>
     )
 }
