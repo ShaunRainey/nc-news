@@ -10,6 +10,7 @@ const CommentAdder = ({setComments}) => {
 
     const handleSubmit= (event) => {
         event.preventDefault();
+        console.log(event.target)
 
         setButtonDisabled(true)
 
