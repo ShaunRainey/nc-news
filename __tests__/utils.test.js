@@ -47,7 +47,7 @@ describe("tests the sort function", () => {
   const result = sortArticles(input, 'unsorted')
   expect(result).toEqual(input)
   })
-  test("sorts array by votes(asc)", () => {
+  test("sorts array by Number of votes (least)", () => {
     //arrange
     const input = [
         {
@@ -134,11 +134,11 @@ describe("tests the sort function", () => {
         }
     ]
     //act
-    result = sortArticles(input, 'votes(asc)')
+    result = sortArticles(input, 'Number of votes (least)')
     //assert
     expect(result).toEqual(output)
   })
-  test("sorts array by votes(desc)", () => {
+  test("sorts array by Number of votes (most)", () => {
     //arrange
     const input = [
       {
@@ -225,11 +225,11 @@ describe("tests the sort function", () => {
       }
     ]
     //act
-    result = sortArticles(input, 'votes(desc)')
+    result = sortArticles(input, 'Number of votes (most)')
     //assert
     expect(result).toEqual(output)
   })
-  test("sorts array by comment_count(asc)", () => {
+  test("sorts array by Number of comments (least)", () => {
     //arrange
     const input = [
       {
@@ -316,11 +316,11 @@ describe("tests the sort function", () => {
     }
     ]
     //act
-    result = sortArticles(input, 'comment_count(asc)')
+    result = sortArticles(input, 'Number of comments (least)')
     //assert
     expect(result).toEqual(output)
     })
-  test("sorts array by comment_count(desc)", () => {
+  test("sorts array by Number of comments (most)", () => {
     const input = [
       {
         "author": "grumpy19",
@@ -406,11 +406,11 @@ describe("tests the sort function", () => {
       }
     ]
     //act
-    result = sortArticles(input, 'comment_count(desc)')
+    result = sortArticles(input, 'Number of comments (most)')
     //assert
     expect(result).toEqual(output)
   })
-  test("sorts array by created_at(asc)", () => {
+  test("sorts array by Date created (oldest)", () => {
     const input = [
       {
         "author": "grumpy19",
@@ -496,11 +496,11 @@ describe("tests the sort function", () => {
       }
     ] 
     //act
-    result = sortArticles(input, 'created_at(asc)')
+    result = sortArticles(input, 'Date created (oldest)')
     //assert
     expect(result).toEqual(output)
   })
-  test("sorts array by created_at(desc)", () => {
+  test("sorts array by Date created (newest)", () => {
     const input = [
       {
       "author": "grumpy19",
@@ -586,7 +586,7 @@ describe("tests the sort function", () => {
       }
     ] 
     //act
-    result = sortArticles(input, 'created_at(desc)')
+    result = sortArticles(input, 'Date created (newest)')
     //assert
     expect(result).toEqual(output)
   })
@@ -634,12 +634,12 @@ describe("tests the sort function", () => {
       }
     ]
 
-    const result1 = sortArticles(input, "votes(asc)")
-    const result2 = sortArticles(input, "votes(desc)")
-    const result3 = sortArticles(input, "comment_count(asc)")
-    const result4 = sortArticles(input, "comment_count(desc)")
-    const result5 = sortArticles(input, "created_at(asc)")
-    const result6 = sortArticles(input, "created_at(desc)")
+    const result1 = sortArticles(input, "Number of votes (least)")
+    const result2 = sortArticles(input, "Number of votes (most)")
+    const result3 = sortArticles(input, "Number of comments (least)")
+    const result4 = sortArticles(input, "Number of comments (most)")
+    const result5 = sortArticles(input, "Date created (oldest)")
+    const result6 = sortArticles(input, "Date created (newest)")
 
     expect(result1).not.toBe(input)
     expect(result2).not.toBe(input)

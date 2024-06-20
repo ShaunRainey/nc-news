@@ -13,6 +13,13 @@ const ArticleList = () =>{
     const {article_id} = useParams();
     const [searchParams, setSearchParams] = useSearchParams();
     
+    const [userChoice, setUserChoice] = useState("")
+
+    const handleSubmit= (event) => {
+        event.preventDefault();
+        setUserChoice(event.target.value)
+    }
+
    const topicQuery = searchParams.get('topic')
 
     useEffect(() =>{
@@ -26,16 +33,16 @@ const ArticleList = () =>{
         } else if(topicQuery) {
             setIsLoading(true);
             getArticlesByTopic(topicQuery).then((articlesFromApi)=>{
-            setArticles(articlesFromApi)
+            setArticles(sortArticles(articlesFromApi, userChoice))
             setIsLoading(false)
         })} else {
             setIsLoading(true);
             getArticles().then((articlesFromApi)=>{
-            setArticles(articlesFromApi)
+            setArticles(sortArticles(articlesFromApi, userChoice))
             setIsLoading(false)  
             })
         }
-    },[article_id, topicQuery])
+    },[article_id, topicQuery,userChoice])
 
     if(isLoading) {
         return (
@@ -47,7 +54,8 @@ const ArticleList = () =>{
     
     return (
         <main>
-            <DropDownList/>
+            <DropDownList setUserChoice={setUserChoice} handleSubmit={handleSubmit}/>
+            <p>{userChoice? `Articles currently sorted by: ${userChoice}`:null}</p>
             {articles.map((article)=>{
                 return( 
                     <ul className="ArticleList" key={article.article_id}>
