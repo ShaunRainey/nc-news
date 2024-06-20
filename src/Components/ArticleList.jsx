@@ -11,7 +11,6 @@ const ArticleList = () =>{
     const [searchParams, setSearchParams] = useSearchParams();
     
    const topicQuery = searchParams.get('topic')
-   console.log(topicQuery)
 
     useEffect(() =>{
         if(article_id){
