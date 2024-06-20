@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { getArticles, getArticlesById, getArticlesByTopic } from "../Utilities/api";
 import ArticleCard from "./ArticleCard";
+import DropDownList from "./DropDownList";
 import { useParams, useSearchParams } from "react-router-dom";
-const sortArticles = require("../src/Utilities/functions")
+import sortArticles from "../Utilities/functions";
 
 
 const ArticleList = () =>{
@@ -46,6 +47,7 @@ const ArticleList = () =>{
     
     return (
         <main>
+            <DropDownList/>
             {articles.map((article)=>{
                 return( 
                     <ul className="ArticleList" key={article.article_id}>

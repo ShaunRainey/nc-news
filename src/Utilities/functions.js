@@ -2,9 +2,11 @@ function sortArticles(articles, option){
 
     let sortedArticles = [...articles]
 
+    if(option === 'unsorted'){
+    }
+
     if (option === 'created_at(asc)'){
         sortedArticles = sortedArticles.sort((a, b) => a.created_at.localeCompare(b.created_at))
-        return sortedArticles
     }
 
     if (option === 'comment_count(asc)'){
@@ -17,7 +19,6 @@ function sortArticles(articles, option){
 
     if (option === 'created_at(desc)'){
         sortedArticles = sortedArticles.sort((a, b) => b.created_at.localeCompare(a.created_at))
-        return sortedArticles
     }
 
     if (option === 'comment_count(desc)'){
@@ -31,4 +32,6 @@ function sortArticles(articles, option){
     return sortedArticles
 }
 
-module.exports = sortArticles;
+// module.exports = sortArticles;
+
+export default sortArticles
