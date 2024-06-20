@@ -45,3 +45,10 @@ export const postComment = (article_id, newCommentText, user) => {
 export const deleteComment = (comment_id) => {
     return ncNews.delete(`/comments/${comment_id}`)
 }
+
+export const getArticlesByTopic = (topic) => {
+    return ncNews.get(`articles?topic=${topic}`)
+    .then((response) => {
+        return response.data.articles
+    })
+}

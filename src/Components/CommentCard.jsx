@@ -1,13 +1,7 @@
 import { deleteComment } from "../Utilities/api";
-import { useState } from "react";
-import { useParams } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
-
 
 const Comments = ({comment, setComments}) =>{
-    const navigate = useNavigate();
     const user = "grumpy19"
-    const {article_id} = useParams();
 
     const handleClick = () => {
   

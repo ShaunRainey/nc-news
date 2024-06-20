@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
-import { getArticles, getArticlesById } from "../Utilities/api";
+import { getArticles, getArticlesById, getArticlesByTopic } from "../Utilities/api";
 import ArticleCard from "./ArticleCard";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 
 const ArticleList = () =>{
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
 
     const {article_id} = useParams();
+    const [searchParams, setSearchParams] = useSearchParams();
+    
+   const topicQuery = searchParams.get('topic')
+   console.log(topicQuery)
 
     useEffect(() =>{
         if(article_id){
@@ -17,13 +21,19 @@ const ArticleList = () =>{
             setArticles([articlesFromApi])
             setIsLoading(false)
         })
-        } else {
+        } else if(topicQuery) {
+            setIsLoading(true);
+            getArticlesByTopic(topicQuery).then((articlesFromApi)=>{
+            setArticles(articlesFromApi)
+            setIsLoading(false)
+        })} else {
             setIsLoading(true);
             getArticles().then((articlesFromApi)=>{
             setArticles(articlesFromApi)
-            setIsLoading(false)
-        })}
-    },[article_id])
+            setIsLoading(false)  
+            })
+        }
+    },[article_id, topicQuery])
 
     if(isLoading) {
         return (
