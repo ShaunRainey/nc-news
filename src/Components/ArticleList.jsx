@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { getArticles, getArticlesById, getArticlesByTopic } from "../Utilities/api";
 import ArticleCard from "./ArticleCard";
 import { useParams, useSearchParams } from "react-router-dom";
+const sortArticles = require("../src/Utilities/functions")
+
 
 const ArticleList = () =>{
     const [articles, setArticles] = useState([])
