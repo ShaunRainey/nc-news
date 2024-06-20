@@ -10,8 +10,8 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header /><br />
-      <NavBar /><br />
+      <Header />
+      <NavBar />
       <Routes>
         <Route path="/" element = {<HomePage/>} />
 
@@ -22,14 +22,13 @@ function App() {
         } />
         <Route path="/articles/:article_id" element = {<ArticleList/>} />
 
-
-
         <Route path="/articles/:article_id/comments" element = {
           <div>
             <ArticleList/>
             <CommentList/>
           </div>
           } />
+
       </Routes>
     </BrowserRouter>
   )

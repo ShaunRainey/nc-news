@@ -30,3 +30,25 @@ export const patchArticle = (article_id) => {
         data.article
     })
 }
+
+export const postComment = (article_id, newCommentText, user) => {
+    const postBody = {
+        username: user,
+        body: newCommentText
+    }
+    return ncNews.post(`/articles/${article_id}/comments`, postBody)
+    .then(({data})=>{
+        return data.comment
+    })
+}
+
+export const deleteComment = (comment_id) => {
+    return ncNews.delete(`/comments/${comment_id}`)
+}
+
+export const getArticlesByTopic = (topic) => {
+    return ncNews.get(`articles?topic=${topic}`)
+    .then((response) => {
+        return response.data.articles
+    })
+}
