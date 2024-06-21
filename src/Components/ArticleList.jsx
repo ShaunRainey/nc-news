@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getArticles, getArticlesById, getArticlesByTopic } from "../Utilities/api";
+import { getArticles, getArticlesById } from "../Utilities/api";
 import ArticleCard from "./ArticleCard";
 import DropDownList from "./DropDownList";
 import { useParams, useSearchParams } from "react-router-dom";
@@ -30,14 +30,10 @@ const ArticleList = () =>{
             setArticles([articlesFromApi])
             setIsLoading(false)
         })
-        } else if(topicQuery) {
+        } 
+        else {
             setIsLoading(true);
-            getArticlesByTopic(topicQuery).then((articlesFromApi)=>{
-            setArticles(sortArticles(articlesFromApi, userChoice))
-            setIsLoading(false)
-        })} else {
-            setIsLoading(true);
-            getArticles().then((articlesFromApi)=>{
+            getArticles(topicQuery).then((articlesFromApi)=>{
             setArticles(sortArticles(articlesFromApi, userChoice))
             setIsLoading(false)  
             })

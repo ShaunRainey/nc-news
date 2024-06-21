@@ -2,8 +2,8 @@ import axios from "axios";
 
 const ncNews = axios.create({baseURL:"https://backend-project-5-i6jx.onrender.com/api/"})
 
-export const getArticles = () => {
-    return ncNews.get('articles')
+export const getArticles = (topic) => {
+    return ncNews.get('articles', {params:{topic:topic}})
     .then((response) => {
         return response.data.articles
     })
@@ -44,11 +44,4 @@ export const postComment = (article_id, newCommentText, user) => {
 
 export const deleteComment = (comment_id) => {
     return ncNews.delete(`/comments/${comment_id}`)
-}
-
-export const getArticlesByTopic = (topic) => {
-    return ncNews.get(`articles?topic=${topic}`)
-    .then((response) => {
-        return response.data.articles
-    })
 }
