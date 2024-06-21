@@ -2,6 +2,13 @@ import axios from "axios";
 
 const ncNews = axios.create({baseURL:"https://backend-project-5-i6jx.onrender.com/api/"})
 
+export const getUsers = () => {
+    return ncNews.get('users')
+    .then((response)=>{
+        return response.data
+    })
+}
+
 export const getArticles = (topic) => {
     return ncNews.get('articles', {params:{topic:topic}})
     .then((response) => {

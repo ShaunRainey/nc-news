@@ -6,33 +6,39 @@ const NavBar = () => {
         <nav className="NavBar">
             <ul className="Nav ul">
                 <li className="Nav li">
-                <Link to="/" className="nav-link">
-                Home 
-                </Link>
+                    <Link to="/" className="LinkText">
+                    Home 
+                    </Link>
                 </li>
 
                 <li className="Nav li">
-                <Link to="/articles" className="nav-link">
-                All Articles
-                </Link>
+                    <Link to="/articles" className="LinkText">
+                    All Articles
+                    </Link>
                 </li>
 
                 <li className="Nav li">
-                <Link to="/articles?topic=cooking" className="nav-link">
-                Cooking Articles
-                </Link>
+                    <Link to="/articles?topic=cooking" className="LinkText">
+                    Cooking Articles
+                    </Link>
                 </li>
 
                 <li className="Nav li">
-                <Link to="/articles?topic=coding" className="nav-link">
-                Coding Articles
-                </Link>
+                    <Link to="/articles?topic=coding" className="LinkText">
+                    Coding Articles
+                    </Link>
                 </li>
 
                 <li className="Nav li">
-                <Link to="/articles?topic=football" className="nav-link">
-                Football Articles
-                </Link>
+                    <Link to="/articles?topic=football" className="LinkText">
+                    Football Articles
+                    </Link>
+                </li>
+
+                <li className="Nav li">
+                    <Link to="/users" className="LinkText">
+                    Users
+                    </Link>
                 </li>
             </ul>
         </nav>

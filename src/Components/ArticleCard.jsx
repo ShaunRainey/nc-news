@@ -22,30 +22,30 @@ function ArticleCard({article, setArticles}) {
         return(
             <Link to={`/articles/${article.article_id}`}>
                 <button className="Button">
-                <img src={article.article_img_url}/>
-                <p>{article.title}</p>
-                <p>Author: {article.author}</p>
-                <p>Topic: {article.topic}</p>
-                <p>Date Posted: {article.created_at}</p>
-                <p>Number of Comments: {article.comment_count}</p>
-                <p>Votes: {article.votes}</p>
-                <p>Article ID: {article.article_id}</p>
+                <img src={article.article_img_url} alt={"Stock image related to the topic of " + article.topic}/>
+                <h2>{article.title}</h2>
+                <h4>Author: {article.author}</h4>
+                <h4>Topic: {article.topic}</h4>
+                <h4>Date Posted: {article.created_at}</h4>
+                <h4>Number of Comments: {article.comment_count}</h4>
+                <h4>Votes: {article.votes}</h4>
+                <h4>Article ID: {article.article_id}</h4>
                 </button>
             </Link>
         ) 
     } else {
         return(
             <article className="Article">
-                <img src={article.article_img_url}/>
-                <p>{article.title}</p>
-                <p>Author: {article.author}</p>
-                <p>Topic: {article.topic}</p>
-                <p>Date Posted: {article.created_at}</p>
+                <img src={article.article_img_url} alt={"Stock image related to the topic of " + article.topic}/>
+                <h2>{article.title}</h2>
+                <h4>Author: {article.author}</h4>
+                <h4>Topic: {article.topic}</h4>
+                <h4>Date Posted: {article.created_at}</h4>
                 <Link to={`/articles/${article.article_id}/comments`}>
-                <p>Click to see {article.comment_count} comments!</p>
+                <h4 className="LinkText">Click to see {article.comment_count} comments!</h4>
                 </Link>
                 <button className="InternalButton" onClick={()=>{upvoteArticle(article.article_id)}} >Votes: {article.votes} </button>
-                <p>Article ID: {article.article_id}</p>
+                <h4>Article ID: {article.article_id}</h4>
             </article>
         
         )

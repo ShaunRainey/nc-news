@@ -18,21 +18,25 @@
   border:5px solid brown;
   border-radius: 10px;
   background-color: bisque;
-  color: brown;
   margin: 5px;
   display: grid;
-  
+  color:brown
 }
 
-Nav ul{
+.Nav ul{
   list-style: none;
   margin: 0 2px;
-  padding: 0;
+  padding: 0  
 }
 
-Nav li {
+.Nav li {
   display: inline-block;
   padding: 5px 5px;
+}
+
+.LinkText{
+  color:brown;
+  text-decoration: underline;
 }
 
 .ArticleList{
@@ -117,5 +121,20 @@ Nav li {
   border-radius: 10px;
   color:brown;
   font-size: larger;
+}
+
+.UserCard{
+  color: brown;
+  border:5px solid brown;
+  border-radius: 10px;
+  background-color: bisque;
+}
+
+.UserList{
+  position: relative;
+  margin: 5px;
+  padding: 2rem;
+  background-color:bisque;
+  list-style-type: none;
 }
 
