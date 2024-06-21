@@ -36,7 +36,7 @@ const Users = ({setAccount}) => {
                 return(
                     <ul className="UserList" key={person.name}>
                         <li className="">
-                            <button className="UserCard" onClick={()=>{setUser(person)}}>
+                            <button className="UserCard" onClick={()=>{setUser(person); alert(person.username + "is now logged in")}}>
                                 <img src={person.avatar_url} alt={"Image showing " + person.username+ "'s avatar of choice"}/>
                                 <p>Username: {person.username}</p>
                                 <p>Name: {person.name}</p>

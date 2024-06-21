@@ -9,11 +9,12 @@ import sortArticles from "../Utilities/functions";
 const ArticleList = () =>{
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const [error, setError] = useState(null)
+    const [userChoice, setUserChoice] = useState("")
 
     const {article_id} = useParams();
     const [searchParams, setSearchParams] = useSearchParams();
     
-    const [userChoice, setUserChoice] = useState("")
 
     const handleSubmit= (event) => {
         event.preventDefault();
@@ -30,6 +31,7 @@ const ArticleList = () =>{
             setArticles([articlesFromApi])
             setIsLoading(false)
         })
+        .catch((err)=>{setError(err)})
         } 
         else {
             setIsLoading(true);
@@ -37,8 +39,19 @@ const ArticleList = () =>{
             setArticles(sortArticles(articlesFromApi, userChoice))
             setIsLoading(false)  
             })
+            .catch((err)=>{setError(err)})
         }
     },[article_id, topicQuery,userChoice])
+
+    if(error){
+        return (
+        <section className="WaitingForInfo">
+            <h1>{error.response.status}</h1>
+            <h2>{error.response.data.msg}</h2>
+            <img src="https://media.giphy.com/media/Oa2vc5td2qREc/giphy.gif" alt="A wild John Travolta appeared" />
+        </section>
+        )
+    }
 
     if(isLoading) {
         return (
