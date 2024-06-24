@@ -4,6 +4,7 @@ import HomePage from './Components/HomePage.jsx';
 import ArticleList from './Components/ArticleList.jsx'
 import CommentList from './Components/CommentList.jsx';
 import Users from './Components/Users.jsx';
+import { ErrorPage } from './Components/ErrorPage.jsx';
 import { UserContext, ProvideUser } from './Contexts/UserContext.jsx';
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -13,13 +14,13 @@ function App() {
 
   const [account, setAccount] = useState({})
 
-
   return (
     <ProvideUser>
       <BrowserRouter>
         <Header />
         <NavBar />
         <Routes>
+          <Route path="*" element = {<ErrorPage/>} />
           <Route path="/" element = {<HomePage/>} />
 
           <Route path="/articles" element = {
