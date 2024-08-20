@@ -32,8 +32,9 @@ Run the following commands:
 - npm i react-router-dom
 - npm install react-bootstrap bootstrap
 - npm install axios
-- npm i react-router-dom
 - npm install jest -D   //required if wanting to test the utils functions//
 - npm run dev
+
+(NOTE TO SELF: If links are responding with a 400 error, server may have gone inactive. Refresh via supabase)
 
 This portfolio project was created as part of a Digital Skills Bootcamp in Software Engineering provided by [Northcoders](https://northcoders.com/)
